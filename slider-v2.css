@@ -1,0 +1,48 @@
+
+
+#my-slider ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+}
+
+
+#my-slider ul li {
+    position:absolute;
+    top:0;
+}
+#my-slider ul li:first-child {
+    position: relative;
+}
+
+#my-slider ul li img {
+    display:block;
+    width:100%;
+}
+
+#my-slider ul li p {
+
+}
+
+
+#my-slider nav {
+    position: relative;
+    width:100%;
+}
+
+#my-slider nav img {
+    display: block;
+    position: absolute;
+    z-index: 987654321;
+    width:10%;
+    max-width: 32px;
+    cursor: pointer;
+}
+#my-slider nav img:first-child {
+    left: 1rem;
+}
+#my-slider nav img:last-child {
+    right: 1rem;
+}
