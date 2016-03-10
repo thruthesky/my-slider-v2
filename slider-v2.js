@@ -120,7 +120,6 @@ $(function() {
             , 'width' : w + 1
         } );
         $act.animate({left:0}, attr.speedPageChange, function(){
-            //el.li().css('display', 'none');
             el.activeSlider().css('display', 'block');
         });
         function resizeHeight() {
@@ -128,7 +127,6 @@ $(function() {
         }
 
         resizeHeight();
-
 
         putButtonMiddle();
     }
