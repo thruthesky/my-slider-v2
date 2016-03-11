@@ -9,13 +9,21 @@
     <style>
         /** How to main one size of animatoin with different size of image */
         /* 사진 크기가 틀릴 때 배너가 아래/위로 흔들리지 않고 크기를 동일하게 맞추는 방법 */
+
         .slider-2 {
-            height:24vw;
+            height:32vw;
             overflow:hidden;
         }
         .slider-2 ul li img {
             height:100%;
         }
+        /** 또는 상황에 따라서 아래와 같이 해도 된다.
+
+        .my-slider ul li img {
+            max-height:32vw;
+            overflow:hidden;
+        }
+        */
     </style>
     <script>
         $(function(){
