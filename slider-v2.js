@@ -1,3 +1,6 @@
+/**
+ * Deprecated. See version 3.
+ */
 $(function() {
 
     var attr = {

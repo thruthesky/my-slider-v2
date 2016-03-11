@@ -1,7 +1,7 @@
 (
     function( $ ) {
         $.fn.animateMySlider = function ( options ) {
-            console.log(this.length);
+            //console.log(this.length);
             this.each ( function () {
                 var $this = $(this);
 
@@ -173,7 +173,8 @@
 
 
                 function putButtonMiddle() {
-                    var h_slider = el.activeSlider().height();
+                    // var h_slider = el.activeSlider().height(); // This height is based on the height of the image ( LI tag ). So, the button moves based on the image size.
+                    var h_slider = el.slider().height();
                     var h_button = el.nav.left().height();
                     var pos_top = ( h_slider / 2 - h_button / 2 );
                     el.nav.left().css('top', pos_top);

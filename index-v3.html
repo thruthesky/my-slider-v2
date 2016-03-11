@@ -6,6 +6,17 @@
     <link rel="stylesheet" type="text/css" href="slider-v3.css">
     <script type="text/javascript" src="jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="slider-v3.js"></script>
+    <style>
+        /** How to main one size of animatoin with different size of image */
+        /* 사진 크기가 틀릴 때 배너가 아래/위로 흔들리지 않고 크기를 동일하게 맞추는 방법 */
+        .slider-2 {
+            height:24vw;
+            overflow:hidden;
+        }
+        .slider-2 ul li img {
+            height:100%;
+        }
+    </style>
     <script>
         $(function(){
             $('.my-slider').animateMySlider();
@@ -103,6 +114,14 @@ This is the end of Slider v2
         <img src="images/next.svg">
     </nav>
     <ul>
+        <li>
+            <a href="#">
+                <img src="images/n0.jpg">
+                <p>
+                    <i>Did you eat dinner? what did you eat? was it good?</i>
+                </p>
+            </a>
+        </li>
         <li>
             <a href="#">
                 <img src="images/n1.jpg">
