@@ -51,7 +51,7 @@ $(function() {
     function showDots() {
         var m = '';
         for ( var i = 0 ; i < el.li().length ; i ++ ) {
-            m += '<b no="'+i+'">·</b>';
+            m += '<b no="'+i+'">-</b>';
         }
         el.slider().append('<nav class="dots">' + m + '</nav>');
         var $dots = el.slider().find('.dots');
