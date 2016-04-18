@@ -83,7 +83,7 @@
                     else {
                         settings.active = parseInt(no) + 1;
                     }
-                    console.log('settings.active:' + settings.active);
+                    // console.log('settings.active:' + settings.active);
                     animate(true);
                 }
                 function animate( force ) {
@@ -150,8 +150,9 @@
                         'color': 'white'
                     });
                     $dots.find('b').click(function(){
+                        if ( inAnimation ) return;
                         var no = $(this).attr('no');
-                        console.log(no);
+                        //console.log(no);
                         animateNo(no);
                     });
                 }
