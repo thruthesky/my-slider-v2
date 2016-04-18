@@ -27,7 +27,13 @@
     </style>
     <script>
         $(function(){
-            $('.my-slider').animateMySlider();
+            $('.slider-1').animateMySlider({
+                speedPageChange : 1700,
+                intervalPageChange : 2000
+            });
+            $('.slider-2').animateMySlider({
+                intervalPageChange : 1800
+            });
         });
 
     </script>

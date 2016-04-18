@@ -17,6 +17,8 @@
                     dotColor : '#494949'
                 }, options );
 
+                var inAnimation = false;
+
 
                 // elements
                 var el = {
@@ -36,7 +38,11 @@
                         right : function () {
                             return el.slider().find('nav img:eq(1)');
                         }
+                    },
+                    navs : function() {
+                        return el.slider().find('nav');
                     }
+
                 };
 
 
@@ -48,12 +54,14 @@
 
 
                 el.nav.left().click(function(){
-                    console.log('left clicked');
+                    //console.log('left clicked');
+                    if ( inAnimation ) return; // console.log('but in animation. returns.');
                     settings.direction = 'left-to-right';
                     animate(true);
                 });
                 el.nav.right().click(function(){
-                    console.log('right clicked');
+                    // console.log('right clicked');
+                    if ( inAnimation ) return; // console.log('but in animation. returns.');
                     settings.direction = 'right-to-left';
                     animate(true);
                 });
@@ -61,7 +69,8 @@
 
                 // initialize
                 showDots();
-                putButtonMiddle();
+                setTimeout(putNavButtonMiddle, 10);
+
                 setInterval(animate, settings.intervalPageChange);
 
 
@@ -102,7 +111,9 @@
                         , 'left' : left
                         , 'width' : w + 1
                     } );
+                    inAnimation = true;
                     $act.animate({left:0}, settings.speedPageChange, function(){
+                        inAnimation = false;
                         el.activeSlider().css('display', 'block');
                     });
                     function resizeHeight() {
@@ -111,7 +122,7 @@
 
                     resizeHeight();
 
-                    putButtonMiddle();
+                    putNavButtonMiddle();
                 }
 
 
@@ -172,13 +183,24 @@
                 }
 
 
-                function putButtonMiddle() {
+                function putNavButtonMiddle() {
                     // var h_slider = el.activeSlider().height(); // This height is based on the height of the image ( LI tag ). So, the button moves based on the image size.
                     var h_slider = el.slider().height();
+
+                    //console.log('h_slier: ' + h_slider);
+
+
                     var h_button = el.nav.left().height();
-                    var pos_top = ( h_slider / 2 - h_button / 2 );
+
+                    //console.log('h_button: ' + h_button);
+
+                    var pos_top = parseInt( h_slider / 2 - h_button / 2 );
+
+
                     el.nav.left().css('top', pos_top);
                     el.nav.right().css('top', pos_top);
+
+                    el.navs().css('opacity', '1');
                 }
 
                 function pauseAnimation() {

@@ -57,6 +57,7 @@
 
 
 .my-slider nav {
+    opacity: .001;
     position: relative;
     width:100%;
 }
