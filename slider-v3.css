@@ -57,12 +57,13 @@
 
 
 .my-slider nav {
+    opacity: .001;
     position: relative;
     width:100%;
 }
 
 .my-slider nav img {
-    display: none;
+    display: block;
     position: absolute;
     z-index: 987654321;
     width:10%;
